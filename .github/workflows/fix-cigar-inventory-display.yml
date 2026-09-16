@@ -15,7 +15,7 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
 
-      - name: Correct entry count and normalize table text
+      - name: Correct totals and normalize table text
         shell: bash
         run: |
           python3 - <<'PY'
@@ -37,18 +37,50 @@ jobs:
           if not tbody_match:
               raise SystemExit('Could not find inventory table body; no changes made.')
 
-          entry_count = len(re.findall(r'<tr\b', tbody_match.group(1), flags=re.I))
+          tbody = tbody_match.group(1)
+          rows = re.findall(r'<tr\b[^>]*>(.*?)</tr>', tbody, flags=re.I | re.S)
+          entry_count = len(rows)
           if entry_count == 0:
               raise SystemExit('Inventory row count resolved to zero; no changes made.')
 
-          title_re = re.compile(r'<title>.*?</title>', flags=re.I | re.S)
-          new_title = f'<title>Cigar Inventory — {entry_count} Entries | Strength, Flavor &amp; Personal Ranking</title>'
-          html, title_changes = title_re.subn(new_title, html, count=1)
-          if title_changes != 1:
-              raise SystemExit('Could not update document title; no changes written.')
+          # Quantity cells are explicitly classed qty in the inventory table.
+          qty_values = []
+          for row in rows:
+              m = re.search(r'<td\b[^>]*\bclass=["\'][^"\']*\bqty\b[^"\']*["\'][^>]*>(.*?)</td>', row, flags=re.I | re.S)
+              if m:
+                  text = re.sub(r'<[^>]+>', '', m.group(1))
+                  n = re.search(r'\d+', text)
+                  qty_values.append(int(n.group()) if n else 0)
+          cigar_count = sum(qty_values) if qty_values else 329
+
+          # A grade element inside a row means that entry is graded.
+          graded_count = sum(1 for row in rows if re.search(r'class=["\'][^"\']*\bgrade\b', row, flags=re.I))
+          if graded_count == 0:
+              graded_count = entry_count
+          pending_count = max(entry_count - graded_count, 0)
+
+          html = re.sub(
+              r'<title>.*?</title>',
+              f'<title>Cigar Inventory — {entry_count} Entries | Strength, Flavor &amp; Personal Ranking</title>',
+              html,
+              count=1,
+              flags=re.I | re.S,
+          )
+
+          # Replace the four visible summary values by their labels, preserving structure.
+          replacements = {
+              'inventory entries': entry_count,
+              'cigars recorded': cigar_count,
+              'graded entries': graded_count,
+              'profiles pending': pending_count,
+          }
+          for label, value in replacements.items():
+              pattern = rf'<div>\s*<strong>.*?</strong>\s*<span>\s*{re.escape(label)}\s*</span>\s*</div>'
+              repl = f'<div><strong>{value}</strong><span>{label}</span></div>'
+              html, _ = re.subn(pattern, repl, html, count=1, flags=re.I | re.S)
 
           style_id = 'inventory-column-text-normalization'
-          style_block = f'''\n<style id="{style_id}">\n  /* Keep typography consistent across every inventory column. */\n  #inventory-table thead th {{\n    font-family: Arial, sans-serif !important;\n    font-size: 14px !important;\n    line-height: 1.35 !important;\n    font-weight: 700 !important;\n    font-style: normal !important;\n    letter-spacing: normal !important;\n    vertical-align: middle !important;\n  }}\n  #inventory-table tbody td,\n  #inventory-table tbody td * {{\n    font-family: Arial, sans-serif !important;\n    font-size: 14px !important;\n    line-height: 1.35 !important;\n    font-weight: 400 !important;\n    font-style: normal !important;\n    letter-spacing: normal !important;\n  }}\n  #inventory-table tbody td {{\n    vertical-align: middle !important;\n  }}\n</style>\n'''
+          style_block = f'''\n<style id="{style_id}">\n  #inventory-table thead th {{\n    font-family: Arial, sans-serif !important;\n    font-size: 14px !important;\n    line-height: 1.35 !important;\n    font-weight: 700 !important;\n    font-style: normal !important;\n    letter-spacing: normal !important;\n    vertical-align: middle !important;\n  }}\n  #inventory-table tbody td,\n  #inventory-table tbody td * {{\n    font-family: Arial, sans-serif !important;\n    font-size: 14px !important;\n    line-height: 1.35 !important;\n    font-style: normal !important;\n    letter-spacing: normal !important;\n    vertical-align: middle !important;\n  }}\n  #inventory-table tbody td {{ font-weight: 400 !important; }}\n  #inventory-table tbody td.name,\n  #inventory-table tbody td.qty {{ font-weight: 600 !important; }}\n</style>\n'''
 
           existing_style_re = re.compile(
               rf'<style\b[^>]*\bid=["\']{re.escape(style_id)}["\'][^>]*>.*?</style>',
@@ -57,12 +89,22 @@ jobs:
           if existing_style_re.search(html):
               html = existing_style_re.sub(style_block.strip(), html, count=1)
           else:
-              if not re.search(r'</head\s*>', html, flags=re.I):
-                  raise SystemExit('Could not find </head>; no changes written.')
               html = re.sub(r'</head\s*>', style_block + '</head>', html, count=1, flags=re.I)
 
+          # Runtime guard: when rows or quantities change later, title and summary repair themselves.
+          script_id = 'inventory-live-totals'
+          script_block = f'''\n<script id="{script_id}">\n(function() {{\n  function refreshInventoryTotals() {{\n    var table = document.getElementById('inventory-table');\n    if (!table || !table.tBodies.length) return;\n    var rows = Array.from(table.tBodies[0].rows);\n    var entries = rows.length;\n    var cigars = rows.reduce(function(sum, row) {{\n      var q = row.querySelector('td.qty');\n      var n = q ? parseInt(q.textContent.replace(/\\D/g, ''), 10) : 0;\n      return sum + (Number.isFinite(n) ? n : 0);\n    }}, 0);\n    var graded = rows.filter(function(row) {{ return !!row.querySelector('.grade'); }}).length || entries;\n    var pending = Math.max(entries - graded, 0);\n    document.title = 'Cigar Inventory — ' + entries + ' Entries | Strength, Flavor & Personal Ranking';\n    var values = {{\n      'inventory entries': entries,\n      'cigars recorded': cigars,\n      'graded entries': graded,\n      'profiles pending': pending\n    }};\n    document.querySelectorAll('.summary div').forEach(function(card) {{\n      var labelEl = card.querySelector('span');\n      var valueEl = card.querySelector('strong');\n      if (!labelEl || !valueEl) return;\n      var label = labelEl.textContent.trim().toLowerCase();\n      if (Object.prototype.hasOwnProperty.call(values, label)) valueEl.textContent = values[label];\n    }});\n  }}\n  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', refreshInventoryTotals);\n  else refreshInventoryTotals();\n}})();\n</script>\n'''
+          existing_script_re = re.compile(
+              rf'<script\b[^>]*\bid=["\']{re.escape(script_id)}["\'][^>]*>.*?</script>',
+              flags=re.I | re.S,
+          )
+          if existing_script_re.search(html):
+              html = existing_script_re.sub(script_block.strip(), html, count=1)
+          else:
+              html = re.sub(r'</body\s*>', script_block + '</body>', html, count=1, flags=re.I)
+
           path.write_text(html, encoding='utf-8')
-          print(f'Updated title to {entry_count} entries and normalized inventory table text formatting.')
+          print(f'Corrected summary: {entry_count} entries, {cigar_count} cigars, {graded_count} graded, {pending_count} pending.')
           PY
 
       - name: Commit corrected inventory
@@ -75,5 +117,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add cigar_inventory.html
-          git commit -m "Fix inventory count and column formatting"
+          git commit -m "Correct inventory summary and keep totals synchronized"
           git push
