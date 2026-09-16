@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - '.github/workflows/fix-cigar-inventory-display.yml'
+      - 'scripts/fix_inventory_display.py'
 
 permissions:
   contents: write
