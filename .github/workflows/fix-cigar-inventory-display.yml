@@ -1,0 +1,79 @@
+name: Fix cigar inventory display
+
+on:
+  push:
+    paths:
+      - '.github/workflows/fix-cigar-inventory-display.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  patch-inventory:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Correct entry count and normalize table text
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+
+          path = Path('cigar_inventory.html')
+          html = path.read_text(encoding='utf-8')
+
+          table_match = re.search(
+              r'<table\b[^>]*\bid=["\']inventory-table["\'][^>]*>(.*?)</table>',
+              html,
+              flags=re.I | re.S,
+          )
+          if not table_match:
+              raise SystemExit('Could not find #inventory-table; no changes made.')
+
+          tbody_match = re.search(r'<tbody\b[^>]*>(.*?)</tbody>', table_match.group(1), flags=re.I | re.S)
+          if not tbody_match:
+              raise SystemExit('Could not find inventory table body; no changes made.')
+
+          entry_count = len(re.findall(r'<tr\b', tbody_match.group(1), flags=re.I))
+          if entry_count == 0:
+              raise SystemExit('Inventory row count resolved to zero; no changes made.')
+
+          title_re = re.compile(r'<title>.*?</title>', flags=re.I | re.S)
+          new_title = f'<title>Cigar Inventory — {entry_count} Entries | Strength, Flavor &amp; Personal Ranking</title>'
+          html, title_changes = title_re.subn(new_title, html, count=1)
+          if title_changes != 1:
+              raise SystemExit('Could not update document title; no changes written.')
+
+          style_id = 'inventory-column-text-normalization'
+          style_block = f'''\n<style id="{style_id}">\n  /* Keep typography consistent across every inventory column. */\n  #inventory-table thead th {{\n    font-family: Arial, sans-serif !important;\n    font-size: 14px !important;\n    line-height: 1.35 !important;\n    font-weight: 700 !important;\n    font-style: normal !important;\n    letter-spacing: normal !important;\n    vertical-align: middle !important;\n  }}\n  #inventory-table tbody td,\n  #inventory-table tbody td * {{\n    font-family: Arial, sans-serif !important;\n    font-size: 14px !important;\n    line-height: 1.35 !important;\n    font-weight: 400 !important;\n    font-style: normal !important;\n    letter-spacing: normal !important;\n  }}\n  #inventory-table tbody td {{\n    vertical-align: middle !important;\n  }}\n</style>\n'''
+
+          existing_style_re = re.compile(
+              rf'<style\b[^>]*\bid=["\']{re.escape(style_id)}["\'][^>]*>.*?</style>',
+              flags=re.I | re.S,
+          )
+          if existing_style_re.search(html):
+              html = existing_style_re.sub(style_block.strip(), html, count=1)
+          else:
+              if not re.search(r'</head\s*>', html, flags=re.I):
+                  raise SystemExit('Could not find </head>; no changes written.')
+              html = re.sub(r'</head\s*>', style_block + '</head>', html, count=1, flags=re.I)
+
+          path.write_text(html, encoding='utf-8')
+          print(f'Updated title to {entry_count} entries and normalized inventory table text formatting.')
+          PY
+
+      - name: Commit corrected inventory
+        shell: bash
+        run: |
+          if git diff --quiet -- cigar_inventory.html; then
+            echo "No inventory changes were necessary."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add cigar_inventory.html
+          git commit -m "Fix inventory count and column formatting"
+          git push
