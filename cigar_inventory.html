@@ -99,7 +99,7 @@ footer{margin-top:20px}
 </style>
 </head><body><main>
 <h1>Cigar Inventory</h1><p class="meta">Photo-backed inventory · Strength, flavor and personal fit · Research updated September 12, 2026</p>
-<div class="summary"><div><strong>76</strong><span>inventory entries</span></div><div><strong>202</strong><span>cigars recorded</span></div><div><strong>38</strong><span>graded entries</span></div><div><strong>38</strong><span>profiles pending</span></div></div><p class="update-note">Added CAO FASA Sol as two separate size entries: #36 Gigante (6 × 60), quantity 1, and #37 Toro (6 × 50), quantity 1. Both have a researched Medium profile and C predicted personal-fit grade. One supplied photo is shared as a line reference. Total recorded: 329 cigars across 76 entries; all earlier entries and quantities are unchanged.</p><details class="guide" id="ranking-guide">
+<div class="summary"><div><strong>76</strong><span>inventory entries</span></div><div><strong>324</strong><span>cigars recorded</span></div></div><p class="update-note">Added CAO FASA Sol as two separate size entries: #36 Gigante (6 × 60), quantity 1, and #37 Toro (6 × 50), quantity 1. Both have a researched Medium profile and C predicted personal-fit grade. One supplied photo is shared as a line reference. Total recorded: 324 cigars across 76 entries; all earlier entries and quantities are unchanged.</p><details class="guide" id="ranking-guide">
 <summary>How your favorites, dislikes and A–F grades work</summary>
 <p><strong>Equal top references:</strong> CAO Black, Schizo Maduro and Mark Twain Riverboat. <strong>Also enjoyed:</strong> Plasencia Alma del Campo and 5 Vegas Classic. <strong>Additional confirmed favorites:</strong> Nub Nuance Single, Double and Triple Roast; Tabak Especial; and CAO Moontrance. Earlier direct feedback also establishes enjoyment of CAO Eileen’s Dream. Tabak Especial’s Dulce/Negra version is still unspecified.</p><section aria-labelledby="prelight-taste-title" id="prelight-taste-preference">
 <h2 id="prelight-taste-title">Pre-light taste — a personal warning signal</h2>
@@ -290,7 +290,8 @@ footer{margin-top:20px}
   const table = document.getElementById('inventory-table');
   const rows = Array.from(table.tBodies[0].rows);
   const totalEntries = rows.length;
-  const totalQuantity = rows.reduce((sum,row) => sum + Number(row.dataset.quantity), 0);
+  const rowQuantity = row => { const cell=row.cells[5]; if(!cell) return 0; const match=cell.textContent.match(/\d+/); return match ? Number(match[0]) : 0; };
+  const totalQuantity = rows.reduce((sum,row) => sum + rowQuantity(row), 0);
   const search = document.getElementById('inventory-search');
   const strength = document.getElementById('strength-filter');
   const grade = document.getElementById('grade-filter');
@@ -308,7 +309,7 @@ footer{margin-top:20px}
         (!strength.value || row.dataset.strength===strength.value) &&
         (!grade.value || row.dataset.grade===grade.value);
       row.hidden=!visible;
-      if(visible){count++; quantity+=Number(row.dataset.quantity);}
+      if(visible){count++; quantity+=rowQuantity(row);}
     });
     status.textContent=`Showing ${count} of ${totalEntries} entries · ${quantity} of ${totalQuantity} cigars. Scroll sideways on narrower screens. Source links open in a new tab.`;
     window.dispatchEvent(new Event('resize'));
@@ -571,5 +572,5 @@ footer{margin-top:20px}
   }
 }
 </script><script id="inventory-live-totals">
-(function(){function refresh(){var t=document.getElementById('inventory-table');if(!t||!t.tBodies.length)return;var r=Array.from(t.tBodies[0].rows),e=r.length,c=r.reduce(function(s,row){var q=row.querySelector('td.qty'),n=q?parseInt(q.textContent.replace(/\D/g,''),10):0;return s+(Number.isFinite(n)?n:0)},0),g=r.filter(function(row){return !!row.querySelector('.grade')}).length,p=Math.max(e-g,0);document.title='Cigar Inventory — '+e+' Entries | Strength, Flavor & Personal Ranking';var v={'inventory entries':e,'cigars recorded':c,'graded entries':g,'profiles pending':p};document.querySelectorAll('.summary div').forEach(function(card){var l=card.querySelector('span'),x=card.querySelector('strong');if(!l||!x)return;var k=l.textContent.trim().toLowerCase();if(Object.prototype.hasOwnProperty.call(v,k))x.textContent=v[k]})}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',refresh);else refresh()})();
+(function(){function q(row){var cell=row.cells[5];if(!cell)return 0;var m=cell.textContent.match(/\d+/);return m?Number(m[0]):0}function refresh(){var t=document.getElementById('inventory-table');if(!t||!t.tBodies.length)return;var r=Array.from(t.tBodies[0].rows),e=r.length,c=r.reduce(function(s,row){return s+q(row)},0);document.title='Cigar Inventory — '+e+' Entries | Strength, Flavor & Personal Ranking';var v={'inventory entries':e,'cigars recorded':c};document.querySelectorAll('.summary div').forEach(function(card){var l=card.querySelector('span'),x=card.querySelector('strong');if(!l||!x)return;var k=l.textContent.trim().toLowerCase();if(Object.prototype.hasOwnProperty.call(v,k))x.textContent=v[k]})}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',refresh);else refresh()})();
 </script></body></html>
