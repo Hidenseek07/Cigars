@@ -24,8 +24,8 @@ for row in rows:
         n = re.search(r'\d+', txt)
         qtys.append(int(n.group()) if n else 0)
 
-cigars = sum(qtys) if qtys else 329
-graded = sum(1 for row in rows if re.search(r'class=["\'][^"\']*\bgrade\b', row, re.I)) or entries
+cigars = sum(qtys)
+graded = sum(1 for row in rows if re.search(r'class=["\'][^"\']*\bgrade\b', row, re.I))
 pending = max(entries - graded, 0)
 
 html = re.sub(
@@ -36,21 +36,23 @@ html = re.sub(
     flags=re.I | re.S,
 )
 
-values = {
-    'inventory entries': entries,
-    'cigars recorded': cigars,
-    'graded entries': graded,
-    'profiles pending': pending,
-}
-for label, value in values.items():
-    pattern = rf'<div>\s*<strong>.*?</strong>\s*<span>\s*{re.escape(label)}\s*</span>\s*</div>'
-    html = re.sub(
-        pattern,
-        lambda _m, v=value, l=label: f'<div><strong>{v}</strong><span>{l}</span></div>',
-        html,
-        count=1,
-        flags=re.I | re.S,
-    )
+summary = (
+    f'<div class="summary">'
+    f'<div><strong>{entries}</strong><span>inventory entries</span></div>'
+    f'<div><strong>{cigars}</strong><span>cigars recorded</span></div>'
+    f'<div><strong>{graded}</strong><span>graded entries</span></div>'
+    f'<div><strong>{pending}</strong><span>profiles pending</span></div>'
+    f'</div><p class="update-note">'
+)
+html, n = re.subn(
+    r'<div class="summary">.*?</div></div><p class="update-note">',
+    lambda _m: summary,
+    html,
+    count=1,
+    flags=re.I | re.S,
+)
+if n != 1:
+    raise SystemExit('summary block not found')
 
 style = '''<style id="inventory-column-text-normalization">
 #inventory-table thead th{font-family:Arial,sans-serif!important;font-size:14px!important;line-height:1.35!important;font-weight:700!important;font-style:normal!important;letter-spacing:normal!important;vertical-align:middle!important}
@@ -65,7 +67,7 @@ else:
     html = html.replace('</head>', style + '</head>', 1)
 
 script = '''<script id="inventory-live-totals">
-(function(){function refresh(){var t=document.getElementById('inventory-table');if(!t||!t.tBodies.length)return;var r=Array.from(t.tBodies[0].rows),e=r.length,c=r.reduce(function(s,row){var q=row.querySelector('td.qty'),n=q?parseInt(q.textContent.replace(/\\D/g,''),10):0;return s+(Number.isFinite(n)?n:0)},0),g=r.filter(function(row){return !!row.querySelector('.grade')}).length||e,p=Math.max(e-g,0);document.title='Cigar Inventory — '+e+' Entries | Strength, Flavor & Personal Ranking';var v={'inventory entries':e,'cigars recorded':c,'graded entries':g,'profiles pending':p};document.querySelectorAll('.summary div').forEach(function(card){var l=card.querySelector('span'),x=card.querySelector('strong');if(!l||!x)return;var k=l.textContent.trim().toLowerCase();if(Object.prototype.hasOwnProperty.call(v,k))x.textContent=v[k]})}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',refresh);else refresh()})();
+(function(){function refresh(){var t=document.getElementById('inventory-table');if(!t||!t.tBodies.length)return;var r=Array.from(t.tBodies[0].rows),e=r.length,c=r.reduce(function(s,row){var q=row.querySelector('td.qty'),n=q?parseInt(q.textContent.replace(/\\D/g,''),10):0;return s+(Number.isFinite(n)?n:0)},0),g=r.filter(function(row){return !!row.querySelector('.grade')}).length,p=Math.max(e-g,0);document.title='Cigar Inventory — '+e+' Entries | Strength, Flavor & Personal Ranking';var v={'inventory entries':e,'cigars recorded':c,'graded entries':g,'profiles pending':p};document.querySelectorAll('.summary div').forEach(function(card){var l=card.querySelector('span'),x=card.querySelector('strong');if(!l||!x)return;var k=l.textContent.trim().toLowerCase();if(Object.prototype.hasOwnProperty.call(v,k))x.textContent=v[k]})}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',refresh);else refresh()})();
 </script>'''
 script_re = re.compile(r'<script\b[^>]*\bid=["\']inventory-live-totals["\'][^>]*>.*?</script>', re.I | re.S)
 if script_re.search(html):
