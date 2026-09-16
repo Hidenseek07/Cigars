@@ -81,7 +81,7 @@ helper = "const rowQuantity = row => { const cell=row.cells[5]; if(!cell) return
 if 'const rowQuantity = row =>' not in html:
     html, helper_changes = re.subn(
         r'(const totalEntries\s*=\s*rows\.length;)',
-        r'\1\n  ' + helper,
+        lambda m: m.group(1) + '\n  ' + helper,
         html,
         count=1,
     )
