@@ -1,1 +1,1 @@
-Entry 61: Brand='Rocky Patel'; Line='Vintage 1990 Broadleaf'; Vitola='Box-Pressed Churchill — 7 × 48'; Quantity 4 -> 3
+Entry 61: Brand='Rocky Patel'; Line='Vintage 1990 Broadleaf'; Vitola='Box-Pressed Churchill — 7 × 48'; Quantity 3 -> 2
