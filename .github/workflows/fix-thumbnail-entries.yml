@@ -25,3 +25,5 @@ jobs:
           if git diff --cached --quiet; then exit 0; fi
           git commit -m "Fix thumbnails for inventory entries 5 and 22"
           git push
+
+# trigger retry
