@@ -1,180 +1,210 @@
 Total rows: 76
+Headers: ['#', 'Photo', 'Brand', 'Line / Cigar', 'Vitola / Size', 'Quantity', 'Strength', 'Flavor', 'Ranking']
 
-ENTRY 34
-row attrs: data-entry-id="34" data-grade="B" data-identification-status="identified" data-quantity="8" data-size-status="user-vitola-catalog-dimensions" data-source-photo="image-1789265855928.jpg" data-strength="Mild–Medium" id="cigar-34" title="CAO Gold: band and user identification agree. Robusto and quantity 8 supplied by the user; CAO lists the Robusto at 5 × 50. Not Gold Maduro. No personal smoking or pre-light reaction has yet been reported for this entry."
+ENTRY 8
+row attrs: data-grade="B" data-quantity="1" data-strength="Medium" id="cigar-08"
 cell count: 9
-  col 4 attrs: class="name"
-  col 4 text: Gold
-  col 4 html: Gold
-  col 7 attrs: class="strength-cell"
-  col 7 text: Mild–Medium
-  col 7 html: <span class="strength-name">Mild–Medium</span>
+  1. #: attrs='class="num"' text='08'
+  2. Photo: attrs='' text=''
+  3. Brand: attrs='' text='CAO'
+  4. Line / Cigar: attrs='class="name"' text='Consigliere'
+  5. Vitola / Size: attrs='title="Dimensions confirmed by the user."' text='5 × 52'
+  6. Quantity: attrs='class="qty"' text='1'
+  7. Strength: attrs='class="strength-cell"' text='Medium Balanced mid-range strength and body.'
+  8. Flavor: attrs='class="flavor-cell"' text='Earth, nuts and cinnamon-like baking spice.'
+  9. Ranking: attrs='class="ranking-cell"' text='B Predicted Earth, nuts and baking spice offer a promising combination. Cinnamon as an accent is compatible; persistent pepper dominance would not be. Exact development remains untested. Evidence & sources Basis: Line-level. Personal ranking is my prediction of your enjoyment; it is not a published quality score. CAO — Consigliere profile Research checked September 12, 2026. Published tasting notes are descriptive, not guaranteed flavors.'
 
-ENTRY 35
-row attrs: data-entry-id="35" data-grade="B" data-identification-status="identified" data-quantity="3" data-size-status="user-vitola-catalog-dimensions" data-source-photo="image-1789266268524.jpg" data-strength="Medium" id="cigar-35" title="CAO FASA Sombra: band and user identification agree. Toro and quantity 3 supplied by the user; CAO lists Toro at 6 × 50. Recorded separately from FASA Sol and Noche. No personal smoking or pre-light reaction has been reported for this entry."
+ENTRY 9
+row attrs: data-grade="A" data-quantity="1" data-search="ramon bueso genesis the project robusto 4.8 x 52 medium full creamy espresso roasted nuts earth nutmeg sweet spicy" data-strength="Medium–Full" id="cigar-09"
 cell count: 9
-  col 4 attrs: class="name"
-  col 4 text: FASA Sombra
-  col 4 html: FASA Sombra
-  col 7 attrs: class="strength-cell"
-  col 7 text: Medium CAO body rating; reviewers report Mild–Medium to just below Medium strength.
-  col 7 html: <span class="strength-name">Medium</span><span class="source-caution">CAO body rating; reviewers report Mild–Medium to just below Medium strength.</span>
+  1. #: attrs='class="num"' text='09'
+  2. Photo: attrs='' text=''
+  3. Brand: attrs='' text='Ramon Bueso'
+  4. Line / Cigar: attrs='class="name"' text='Genesis The Project'
+  5. Vitola / Size: attrs='' text='Robusto — 4.8 × 52'
+  6. Quantity: attrs='class="qty"' text='5'
+  7. Strength: attrs='class="strength-cell"' text='Medium–Full Stronger profile with fuller body and greater nicotine potential.'
+  8. Flavor: attrs='class="flavor-cell"' text='Creamy espresso, roasted nuts, earth and nutmeg, with a sweet-spicy finish.'
+  9. Ranking: attrs='class="ranking-cell"' text='A Predicted Creamy espresso, roasted nuts, earth and nutmeg suggest several compatible layers. Medium–Full can work when those flavors stay balanced; the spicy-sweet finish remains worth assessing. A is based on the profile, not unlimited strength tolerance. Evidence & sources A retained after recalibration: several compatible layers support the prediction. This supersedes the prior blanket statement that strength never affects rankings. Basis: Line-level. Personal ranking is my prediction of your enjoyment; it is not a published quality score. Cigars International — Genesis The Project Cigars International lists Genesis The Project Robusto at 4.8 × 52. Research checked September 12, 2026. Published tasting notes are descriptive, not guaranteed flavors.'
 
-ENTRY 36
-row attrs: data-entry-id="36" data-grade="C" data-identification-status="identified" data-photo-scope="shared-line-reference-size-not-established-by-photo" data-quantity="1" data-size-status="user-dimensions-catalog-vitola" data-source-photo="image-1789266688345.jpg" data-strength="Medium" id="cigar-36" title="CAO FASA Sol: identity supported by the user's description and visible bands. User supplied one 6 × 60 and one 6 × 50; each is recorded separately. The single supplied photo is used as a shared line reference, not evidence that both sizes were separately photographed."
+ENTRY 10
+row attrs: data-grade="C" data-quantity="1" data-search="alec bradley black market filthy hooligan barber pole toro 6 x 50 medium cream nuts cocoa cedar sweetness spice pepper" data-strength="Medium" id="cigar-10"
 cell count: 9
-  col 4 attrs: class="name"
-  col 4 text: FASA Sol
-  col 4 html: FASA Sol
-  col 7 attrs: class="strength-cell"
-  col 7 text: Medium Official body: Medium. A Gigante reviewer perceived a fuller profile.
-  col 7 html: <span class="strength-name">Medium</span><span class="source-caution">Official body: Medium. A Gigante reviewer perceived a fuller profile.</span>
+  1. #: attrs='class="num"' text='10'
+  2. Photo: attrs='' text=''
+  3. Brand: attrs='' text='Alec Bradley — Black Market Filthy Hooligan'
+  4. Line / Cigar: attrs='class="name"' text='Toro — 6 × 50'
+  5. Vitola / Size: attrs='' text='2'
+  6. Quantity: attrs='class="qty"' text='1'
+  7. Strength: attrs='class="strength-cell"' text='Medium Balanced mid-range strength and body.'
+  8. Flavor: attrs='class="flavor-cell"' text='Coffee and spice with a crisp, lingering pepper finish.'
+  9. Ranking: attrs='class="ranking-cell"' text='C Predicted Coffee appeals, but a lingering pepper finish is a meaningful mismatch risk. The barber-pole appearance is not evidence that it tastes or develops like your favorite Riverboat. Evidence & sources Basis: Line-level. Personal ranking is my prediction of your enjoyment; it is not a published quality score. Uses the two-wrapper Barber Pole profile, not Shamrock. Release year is unconfirmed, so this is a line-level prediction. Alec Bradley — Filthy Hooligan Barber Pole Research checked September 12, 2026. Published tasting notes are descriptive, not guaranteed flavors.'
 
-ENTRY 37
-row attrs: data-entry-id="37" data-grade="C" data-identification-status="identified" data-photo-scope="shared-line-reference-size-not-established-by-photo" data-quantity="1" data-size-status="user-dimensions-catalog-vitola" data-source-photo="image-1789266688345.jpg" data-strength="Medium" id="cigar-37" title="CAO FASA Sol: identity supported by the user's description and visible bands. User supplied one 6 × 60 and one 6 × 50; each is recorded separately. The single supplied photo is used as a shared line reference, not evidence that both sizes were separately photographed."
+ENTRY 11
+row attrs: data-grade="B" data-quantity="1" data-strength="Mild–Medium" id="cigar-11"
 cell count: 9
-  col 4 attrs: class="name"
-  col 4 text: FASA Sol
-  col 4 html: FASA Sol
-  col 7 attrs: class="strength-cell"
-  col 7 text: Medium Official body: Medium; one Toro reviewer reports Medium–Full body.
-  col 7 html: <span class="strength-name">Medium</span><span class="source-caution">Official body: Medium; one Toro reviewer reports Medium–Full body.</span>
+  1. #: attrs='class="num"' text='11'
+  2. Photo: attrs='' text=''
+  3. Brand: attrs='' text='Macanudo'
+  4. Line / Cigar: attrs='class="name"' text='M by Macanudo Bourbon'
+  5. Vitola / Size: attrs='' text='Unconfirmed'
+  6. Quantity: attrs='class="qty"' text='1'
+  7. Strength: attrs='class="strength-cell"' text='Mild–Medium Flavor fit uncertain'
+  8. Flavor: attrs='class="flavor-cell"' text='Infused bourbon-cocktail notes, cherry sweetness and aromatic bitters.'
+  9. Ranking: attrs='class="ranking-cell"' text='B Predicted Sweet aromatic infusions fit your favorites. Bourbon, cherry and bitters remain untested, and your earlier dislike of medicinal cherry warrants caution. This cigar is not assumed to have that artificial character. Evidence & sources Basis: Line-level. Personal ranking is my prediction of your enjoyment; it is not a published quality score. Your close-up confirmed Bourbon Flavor. This is not the separate Vanilla Bourbon version. Your enjoyment of this infused profile has not been confirmed; cherry is not automatically medicinal. Macanudo — M Bourbon CAO — Moontrance reference profile (a different, confirmed-loved infusion) Research checked September 12, 2026. Published tasting notes are descriptive, not guaranteed flavors.'
 
-ENTRY 38
-row attrs: data-entry-id="38" data-grade="A" data-identification-status="identified" data-quantity="8" data-size-status="user-vitola-researched-dimensions" data-source-photo="image-1789267239806.jpg" data-strength="Mild" id="cigar-38" title="Tabak Especial Dulce Lonsdale: user identified the cigar and quantity 8. Historical Lonsdale size is 6¾ × 44. Drew Estate currently describes Dulce as mellow, creamy and sweet with coffee, cream and milk chocolate. The user has explicitly identified Tabak Especial as a favorite, so this receives an A confirmed-favorite grade."
+ENTRY 12
+row attrs: data-grade="B" data-quantity="4" data-strength="Mild–Medium" id="cigar-12"
 cell count: 9
-  col 4 attrs: class="name"
-  col 4 text: Tabak Especial Dulce
-  col 4 html: Tabak Especial Dulce
-  col 7 attrs: 
-  col 7 text: Mild Drew Estate describes the Dulce blend as mellow; historical Lonsdale listings commonly classify it Mild to Mild–Medium.
-  col 7 html: <strong>Mild</strong><div class="subnote">Drew Estate describes the Dulce blend as mellow; historical Lonsdale listings commonly classify it Mild to Mild–Medium.</div>
+  1. #: attrs='class="num"' text='12'
+  2. Photo: attrs='' text=''
+  3. Brand: attrs='' text='Blackbird Cigar Co.'
+  4. Line / Cigar: attrs='class="name"' text='Rook'
+  5. Vitola / Size: attrs='' text='Unconfirmed'
+  6. Quantity: attrs='class="qty"' text='4'
+  7. Strength: attrs='class="strength-cell"' text='Mild–Medium Approachable strength with more body and intensity than a mild cigar.'
+  8. Flavor: attrs='class="flavor-cell"' text='Cream and natural sweetness; reviews add vanilla, nuts, earth and spice, with differing pepper intensity.'
+  9. Ranking: attrs='class="ranking-cell"' text='B Predicted Cream, nuts, sweetness and reported flavor development are promising, but first-hand accounts disagree about pepper intensity. B reflects uncertainty about the balance you would experience—not an assumption that a mild cigar lacks complexity. Evidence & sources Complexity evidence is mixed: a first-hand Toro review reports cream/vanilla progressing into earth and nuts, while a separate Robusto reviewer describes a spice-led experience. Your size is unconfirmed; neither account guarantees your cigar’s profile. Manufacturer notes emphasize cream and natural sweetness. Personal-fit revision: A → B. Creamy layered accounts remain positive, but differing first-hand reports of pepper reduce confidence under your clarified preferences. This is not a finding that Rook is simple. Basis: Line-level. Personal ranking is my prediction of your enjoyment; it is not a published quality score. Blackbird — Rook profile Oak Glen Tobacconist — first-hand Rook Toro development notes CigarScore — contrasting spice-led Rook Robusto review Research checked September 12, 2026. Published tasting notes are descriptive, not guaranteed flavors.'
 
-ENTRY 39
-row attrs: data-grade="B" data-search="oscar valladares wild hunter oscuro toro 6 x 52 medium full chocolate espresso earth sweetness spice" data-strength="Medium–Full" id="cigar-39"
+ENTRY 20
+row attrs: data-entry-id="20" data-grade="A" data-quantity="10" data-strength="Mild" id="cigar-20"
 cell count: 9
-  col 4 attrs: 
-  col 4 text: Wild Hunter Oscuro
-  col 4 html: Wild Hunter Oscuro
-  col 7 attrs: 
-  col 7 text: Medium–Full
-  col 7 html: Medium–Full
+  1. #: attrs='class="num"' text='20'
+  2. Photo: attrs='' text=''
+  3. Brand: attrs='' text='CAO'
+  4. Line / Cigar: attrs='class="name"' text='Flavours — Eileen’s Dream'
+  5. Vitola / Size: attrs='title="Corona is printed on the cellophane label supplied by the user. Exact dimensions have not been confirmed."' text='Corona — dimensions unconfirmed'
+  6. Quantity: attrs='class="qty"' text='10'
+  7. Strength: attrs='class="strength-cell"' text='Mild Lower-intensity profile; generally the most approachable strength range.'
+  8. Flavor: attrs='class="flavor-cell"' text='Infused Irish cream, white chocolate and whiskey, with a soft sweet finish.'
+  9. Ranking: attrs='class="ranking-cell"' text='A Confirmed enjoyed Earlier direct feedback confirms that you enjoyed Eileen’s Dream. Its A is therefore based on your experience, not only on similarity to your other infused favorites. Evidence & sources Basis: prior direct user feedback from June 4, 2026 confirms enjoyment of Eileen’s Dream; the Corona identity comes from the supplied label. The A reflects enjoyment of the line, not a promise that every vitola is identical. Infusion is distinguished from natural tobacco tasting notes. Earlier user feedback specifically favored its non-artificial flavoring; direct enjoyment overrides speculative matching. Famous Smoke — Eileen’s Dream profile Mike’s Cigars — Eileen’s Dream Corona CAO — Eileen’s Dream manufacturer profile Research checked September 12, 2026. Published tasting notes are descriptive, not guaranteed flavors.'
 
-ENTRY 40
-row attrs: data-grade="B" data-search="rocky patel catch twenty-two catch 22 toro 6 x 52 medium cocoa earth spice sweetness corojo" data-strength="Medium" id="cigar-40"
+ENTRY 21
+row attrs: data-entry-id="21" data-grade="B" data-identification-status="identified" data-quantity="2" data-size-status="catalog-accepted-by-user" data-source-photo="image-1789254494345.jpg" data-strength="Medium" id="cigar-21" title="CAO Vision Churchill 7 × 50: manufacturer catalog size accepted by the user; previous ring-gauge discrepancy resolved."
 cell count: 9
-  col 4 attrs: 
-  col 4 text: Catch Twenty-Two
-  col 4 html: Catch Twenty-Two
-  col 7 attrs: 
-  col 7 text: Medium
-  col 7 html: Medium
+  1. #: attrs='class="num"' text='21'
+  2. Photo: attrs='' text=''
+  3. Brand: attrs='' text='CAO'
+  4. Line / Cigar: attrs='class="name"' text='Vision'
+  5. Vitola / Size: attrs='data-size-source="manufacturer-catalog-user-approved" data-source-url="https://www.caocigars.com/cigars/vision/" title="CAO Vision Churchill 7 × 50: manufacturer catalog size accepted by the user; previous ring-gauge discrepancy resolved."' text='Churchill — 7 × 50'
+  6. Quantity: attrs='class="qty" data-quantity-source="user-confirmed"' text='2'
+  7. Strength: attrs='class="strength-cell"' text='Medium Source conflict'
+  8. Flavor: attrs='class="flavor-cell"' text='Coffee, nuts, leather and sweetness, with spice accents.'
+  9. Ranking: attrs='class="ranking-cell"' text='B Predicted Coffee, nuts, leather, sweetness and spice suggest several compatible elements. B allows for the uncertain spice/intensity balance; a fuller body description alone does not establish high nicotine. Evidence & sources Basis: Line-level. Personal ranking is my prediction of your enjoyment; it is not a published quality score. Uses the modern Cameroon Vision profile matching the inventory identification. CAO’s structured Body field says Medium; its story says Medium–Full. The lower structured category is shown, with this conflict visible. CAO — Vision profile Research checked September 12, 2026. Published tasting notes are descriptive, not guaranteed flavors.'
 
-ENTRY 41
-row attrs: data-grade="B" data-search="cao nicaragua granada 6 x 50 medium full espresso cocoa earth cedar spice" data-strength="Medium–Full" id="cigar-41"
+ENTRY 22
+row attrs: data-entry-id="22" data-grade="A" data-identification-status="identified" data-quantity="1" data-search="perdomo habano bourbon barrel aged connecticut churchill 7 x 54 mild medium cream caramel cedar almonds leather buttery smooth" data-source-photo="image-1789254494345.jpg" data-strength="Mild–Medium" id="cigar-22" title="User confirmed the Bourbon Barrel-Aged Connecticut release. Manufacturer profile applied; exact size remains unconfirmed. A is a predicted personal-fit grade, not a confirmed user reaction."
 cell count: 9
-  col 4 attrs: 
-  col 4 text: Nicaragua
-  col 4 html: Nicaragua
-  col 7 attrs: 
-  col 7 text: Medium–Full
-  col 7 html: Medium–Full
+  1. #: attrs='class="num"' text='22'
+  2. Photo: attrs='' text=''
+  3. Brand: attrs='' text='Perdomo — Habano Bourbon Barrel-Aged Connecticut'
+  4. Line / Cigar: attrs='class="name"' text='Churchill — 7 × 54'
+  5. Vitola / Size: attrs='' text='2'
+  6. Quantity: attrs='class="qty"' text='Mild–Medium'
+  7. Strength: attrs='class="strength-cell"' text='Mild–Medium Approachable strength with more body and intensity than a mild cigar.'
+  8. Flavor: attrs='class="flavor-cell"' text='A — Predicted | Excellent fit for your preferences: mild-to-medium strength, rich creaminess, caramel, cedar, almond and a buttery finish. This profile is much closer to your confirmed favorites than to your stronger, pepper-heavy dislikes. Evidence & sources Perdomo: Habano Bourbon Barrel-Aged Connecticut is Mild to Medium with a rich, creamy smoke and hints of caramel and cedar; Churchill is 7 × 54. Cigars.com: Churchill 7 × 54 with sweet cedar, caramel, almonds and leather; Mellow–Medium.'
+  9. Ranking: attrs='class="ranking-cell"' text='A Predicted Cream, caramel, cedar and a buttery finish suggest compatible layers without a high published strength. A is a predicted combination of flavor and balance, not an automatic reward for mildness. Evidence & sources Basis: User-confirmed release; manufacturer line-level profile. Personal ranking is my prediction of your enjoyment, not a published quality score or a guarantee. You corrected the earlier non–Bourbon Barrel-Aged identification and confirmed this is Habano Bourbon Barrel-Aged Connecticut. Perdomo describes this version as mild to medium-bodied, with creaminess, light caramel and cedar notes, and a buttery finish. The profile is for the Connecticut release, not Sun Grown or Maduro. Exact vitola remains unconfirmed; no size has been inferred from the photo. Barrel aging alone is not taken as evidence of a dominant bourbon flavor. Perdomo — Habano Bourbon Barrel-Aged, Connecticut strength and flavor profile Research checked September 12, 2026. Published tasting notes are descriptive, not guaranteed flavors.'
 
-ENTRY 42
-row attrs: data-grade="A" data-search="cao gold maduro robusto 5 x 50 mild medium coffee cream butter cocoa earth sweetness" data-strength="Mild–Medium" id="cigar-42"
+ENTRY 23
+row attrs: data-entry-id="23" data-grade="B" data-identification-status="identified" data-quantity="1" data-size-status="vitola-confirmed-dimensions-pending" data-source-photo="image-1789254494345.jpg" data-strength="Medium" id="cigar-23" title="Toro vitola confirmed by user; exact length and ring gauge not supplied."
 cell count: 9
-  col 4 attrs: 
-  col 4 text: Gold Maduro
-  col 4 html: Gold Maduro
-  col 7 attrs: 
-  col 7 text: Mild–Medium
-  col 7 html: Mild–Medium
+  1. #: attrs='class="num"' text='23'
+  2. Photo: attrs='' text=''
+  3. Brand: attrs='' text='Foundation'
+  4. Line / Cigar: attrs='class="name"' text='The Wise Man Corojo'
+  5. Vitola / Size: attrs='data-size-source="user" title="Toro vitola confirmed by user; exact length and ring gauge not supplied."' text='Toro — dimensions unconfirmed'
+  6. Quantity: attrs='class="qty"' text='1'
+  7. Strength: attrs='class="strength-cell"' text='Medium Balanced mid-range strength and body.'
+  8. Flavor: attrs='class="flavor-cell"' text='Earth, wood, stone-fruit sweetness, baking spice and pepper.'
+  9. Ranking: attrs='class="ranking-cell"' text='B Predicted Earth, wood, stone-fruit sweetness and baking spice offer promising variety. The degree of pepper remains the reservation; fruit, wood and Medium strength are not automatic drawbacks. Evidence & sources Basis: Toro review. Personal ranking is my prediction of your enjoyment; it is not a published quality score. Uses the newer blue-band Wise Man Corojo, not the earlier El Güegüense blend. The first-hand Toro review reports Medium strength and body. Foundation — The Wise Man Corojo Cigar Coop — Wise Man Corojo Toro review Research checked September 12, 2026. Published tasting notes are descriptive, not guaranteed flavors.'
 
-ENTRY 43
-row attrs: data-grade="A" data-search="ave maria immaculata belicoso torpedo 6 x 54 mild medium cream cedar white pepper caramel toast bread" data-strength="Mild–Medium" id="cigar-43"
+ENTRY 24
+row attrs: data-entry-id="24" data-grade="B" data-identification-status="identified" data-quantity="1" data-size-status="catalog-accepted-by-user" data-source-photo="image-1789254494345.jpg" data-strength="Medium" id="cigar-24" title="Partagás Y Nada Más Santiago Gigante 6 × 60: manufacturer catalog size accepted by the user; previous ring-gauge discrepancy resolved."
 cell count: 9
-  col 4 attrs: 
-  col 4 text: Immaculata
-  col 4 html: Immaculata
-  col 7 attrs: 
-  col 7 text: Mild–Medium
-  col 7 html: Mild–Medium
+  1. #: attrs='class="num"' text='24'
+  2. Photo: attrs='' text=''
+  3. Brand: attrs='' text='Partagás'
+  4. Line / Cigar: attrs='class="name"' text='Y Nada Más Santiago'
+  5. Vitola / Size: attrs='data-size-source="manufacturer-catalog-user-approved" data-source-url="https://www.partagas.com/cigars/" title="Partagás Y Nada Más Santiago Gigante 6 × 60: manufacturer catalog size accepted by the user; previous ring-gauge discrepancy resolved."' text='Gigante — 6 × 60'
+  6. Quantity: attrs='class="qty"' text='1'
+  7. Strength: attrs='class="strength-cell"' text='Medium Balanced mid-range strength and body.'
+  8. Flavor: attrs='class="flavor-cell"' text='Earth, natural tobacco sweetness and white pepper.'
+  9. Ranking: attrs='class="ranking-cell"' text='B Predicted Earth and natural sweetness fit. The amount of white pepper and how much nuance develops are untested, keeping this at B; a short catalog description does not prove a one-note cigar. Evidence & sources Basis: Line-level. Personal ranking is my prediction of your enjoyment; it is not a published quality score. Uses the Santiago section of the catalog, not the separate Cibao blend. Partagás — Y Nada Más Santiago profile Research checked September 12, 2026. Published tasting notes are descriptive, not guaranteed flavors.'
 
-ENTRY 44
-row attrs: data-grade="C" data-search="macanudo inspirado green toro 6 x 50 medium earth nuts sweet black pepper coffee maple molasses cedar" data-strength="Medium" id="cigar-44"
-cell count: 9
-  col 4 attrs: 
-  col 4 text: Inspirado Green
-  col 4 html: Inspirado Green
-  col 7 attrs: 
-  col 7 text: Medium
-  col 7 html: Medium
-
-ENTRY 45
-row attrs: data-grade="A" data-search="aging room quattro connecticut vibrato toro box pressed 6 x 54 mild medium cream roasted nuts caramel cedar cocoa sweetness coffee leather spice" data-strength="Mild–Medium" id="cigar-45"
-cell count: 9
-  col 4 attrs: 
-  col 4 text: Quattro Connecticut
-  col 4 html: Quattro Connecticut
-  col 7 attrs: 
-  col 7 text: Mild–Medium
-  col 7 html: Mild–Medium
-
-PATTERNS before39
- column 4:
-   count=2 attrs='class="name"' structure='FASA Sol'
-   count=1 attrs='class="name"' structure='Flathead V660 Carb'
-   count=1 attrs='class="name"' structure='Symphony'
-   count=1 attrs='class="name"' structure='Alma del Campo'
-   count=1 attrs='class="name"' structure='Prensado'
-   count=1 attrs='class="name"' structure='Piazza — 6 × 60'
-   count=1 attrs='class="name"' structure='Cameroon L’Anniversaire'
-   count=1 attrs='class="name"' structure='Colombia'
-   count=1 attrs='class="name"' structure='Consigliere'
-   count=1 attrs='class="name"' structure='Genesis The Project'
-   count=1 attrs='class="name"' structure='Toro — 6 × 50'
-   count=1 attrs='class="name"' structure='M by Macanudo Bourbon'
-   count=1 attrs='class="name"' structure='Rook'
-   count=1 attrs='class="name"' structure='Nuance Triple Roast'
-   count=1 attrs='class="name"' structure='Rothchildes'
-   count=1 attrs='class="name"' structure='Gold Label'
-   count=1 attrs='class="name"' structure='Noventa'
-   count=1 attrs='class="name"' structure='Black — Frontier'
-   count=1 attrs='class="name"' structure='Black — Gothic'
-   count=1 attrs='class="name"' structure='Superstition'
- column 7:
-   count=25 attrs='class="strength-cell"' structure='<span class="strength-name"></span>'
-   count=10 attrs='class="strength-cell"' structure='<span class="strength-name"></span><span class="source-caution"></span>'
-   count=1 attrs='class="strength-cell"' structure='Spicy, creamy, fruity and sweet, with earthy sweetness from the Italian-grown Habano-seed tobacco.'
-   count=1 attrs='class="strength-cell"' structure='Rich cream, caramel and cedar with sweet cedar, almonds and leather; buttery-smooth finish.'
-   count=1 attrs='' structure='<strong></strong><div class="subnote"></div>'
-
-PATTERNS from39
- column 4:
-   count=2 attrs='' structure='Immaculata'
-   count=2 attrs='' structure='Serie G'
-   count=2 attrs='' structure='Steel Horse'
-   count=1 attrs='' structure='Wild Hunter Oscuro'
-   count=1 attrs='' structure='Catch Twenty-Two'
-   count=1 attrs='' structure='Nicaragua'
-   count=1 attrs='' structure='Gold Maduro'
-   count=1 attrs='' structure='Inspirado Green'
-   count=1 attrs='' structure='Quattro Connecticut'
-   count=1 attrs='' structure='Tiempo 2:11'
-   count=1 attrs='' structure='New Wave Reserva'
-   count=1 attrs='' structure='Session'
-   count=1 attrs='' structure='The Big Payback Connecticut'
-   count=1 attrs='' structure='Inspirado White'
-   count=1 attrs='' structure='White Series'
-   count=1 attrs='' structure='18 Maduro'
-   count=1 attrs='' structure="Chairman's Select 13 Years"
-   count=1 attrs='' structure='Vintage 1992 Sumatra'
-   count=1 attrs='' structure='Cameroon'
-   count=1 attrs='' structure='Serie JJ'
- column 7:
-   count=12 attrs='' structure='Mild–Medium'
-   count=11 attrs='' structure='Medium'
-   count=7 attrs='' structure='Medium–Full'
-   count=5 attrs='' structure='Medium*'
-   count=2 attrs='' structure='Medium–Full*'
-   count=1 attrs='' structure='Full'
+ALL ROWS BRAND / LINE SNAPSHOT
+01: brand='CAO' | line='Flathead V660 Carb' | size='6 × 60'
+02: brand='Gurkha' | line='Symphony' | size='Unconfirmed'
+03: brand='Plasencia' | line='Alma del Campo' | size='Unconfirmed'
+04: brand='Alec Bradley' | line='Prensado' | size='Unconfirmed'
+05: brand='CAO' | line='Piazza — 6 × 60' | size='2'
+06: brand='CAO' | line='Cameroon L’Anniversaire' | size='Unconfirmed'
+07: brand='CAO' | line='Colombia' | size='Unconfirmed'
+08: brand='CAO' | line='Consigliere' | size='5 × 52'
+09: brand='Ramon Bueso' | line='Genesis The Project' | size='Robusto — 4.8 × 52'
+10: brand='Alec Bradley — Black Market Filthy Hooligan' | line='Toro — 6 × 50' | size='2'
+11: brand='Macanudo' | line='M by Macanudo Bourbon' | size='Unconfirmed'
+12: brand='Blackbird Cigar Co.' | line='Rook' | size='Unconfirmed'
+13: brand='Nub / Oliva' | line='Nuance Triple Roast' | size='Unconfirmed'
+14: brand='Illusione' | line='Rothchildes' | size='Unconfirmed'
+15: brand='Cumbres de Puriscal' | line='Gold Label' | size='Torpedo-style; dimensions unconfirmed'
+16: brand='Toraño' | line='Noventa' | size='Santiago (Robusto) — 5 × 50'
+17: brand='CAO' | line='Black — Frontier' | size='Churchill — 7 × 50'
+18: brand='CAO' | line='Black — Gothic' | size='Torpedo — 6 × 52 (catalog size; not measured)'
+19: brand='Alec Bradley' | line='Superstition' | size='Torpedo-style; dimensions unconfirmed'
+20: brand='CAO' | line='Flavours — Eileen’s Dream' | size='Corona — dimensions unconfirmed'
+21: brand='CAO' | line='Vision' | size='Churchill — 7 × 50'
+22: brand='Perdomo — Habano Bourbon Barrel-Aged Connecticut' | line='Churchill — 7 × 54' | size='2'
+23: brand='Foundation' | line='The Wise Man Corojo' | size='Toro — dimensions unconfirmed'
+24: brand='Partagás' | line='Y Nada Más Santiago' | size='Gigante — 6 × 60'
+25: brand='Room101' | line='The Big Payback Maduro' | size='Toro — 6 × 54'
+26: brand='San Cristobal' | line='Revelation — Legend' | size='Legend — 6.25 × 52 (box-pressed)'
+27: brand='Drew Estate' | line='Herrera Estelí Norteño' | size='Robusto Grande — 5.5 × 54'
+28: brand='Mark Twain' | line='Riverboat' | size='Churchill — dimensions unconfirmed'
+29: brand='5 Vegas' | line='Classic' | size='Unconfirmed'
+30: brand='CAO' | line='Flathead Speed Shop Habano' | size='Unconfirmed'
+31: brand='Rocky Patel' | line='LB1' | size='Unconfirmed'
+32: brand='AJ Fernandez' | line='New World Oscuro — Gobernador' | size='Gobernador (Toro) — 6.6 × 55 (user-supplied; catalog: 6.5 × 55)'
+33: brand='CAO' | line='MX2' | size='Toro — 6 × 54'
+34: brand='CAO' | line='Gold' | size='Robusto — 5 × 50'
+35: brand='CAO' | line='FASA Sombra' | size='Toro — 6 × 50'
+36: brand='CAO' | line='FASA Sol' | size='Gigante — 6 × 60'
+37: brand='CAO' | line='FASA Sol' | size='Toro — 6 × 50'
+38: brand='Drew Estate' | line='Tabak Especial Dulce' | size='Lonsdale — 6¾ × 44'
+39: brand='Oscar Valladares' | line='Wild Hunter Oscuro' | size='Toro — 6 × 52'
+40: brand='Rocky Patel' | line='Catch Twenty-Two' | size='Toro — 6 × 52'
+41: brand='CAO' | line='Nicaragua' | size='Granada — 6 × 50'
+42: brand='CAO' | line='Gold Maduro' | size='Robusto — 5 × 50'
+43: brand='Ave Maria' | line='Immaculata' | size='Belicoso (torpedo-style) — 6 × 54'
+44: brand='Macanudo' | line='Inspirado Green' | size='Toro — 6 × 50'
+45: brand='Aging Room' | line='Quattro Connecticut' | size='Vibrato (box-pressed Toro) — 6 × 54'
+46: brand='Mayfin' | line='Tiempo 2:11' | size='Long Robusto — 6 × 52'
+47: brand='E.P. Carrillo' | line='New Wave Reserva' | size='Vitola / size unconfirmed'
+48: brand='CAO' | line='Session' | size='Garage (Robusto) — 5.25 × 54'
+49: brand='Room101' | line='The Big Payback Connecticut' | size='Gordo / Hueso — 6 × 60'
+50: brand='Macanudo' | line='Inspirado White' | size='Robusto — 5 × 50'
+51: brand='Montecristo' | line='White Series' | size='Rothchilde — 5 × 52'
+52: brand='Cusano' | line='18 Maduro' | size='Robusto — 5 × 50'
+53: brand='Gurkha' | line="Chairman's Select 13 Years" | size='Torpedo / Perfecto-style — 4" long; ring gauge unconfirmed'
+54: brand='Rocky Patel' | line='Vintage 1992 Sumatra' | size='Perfecto — 4 × 48'
+55: brand='Nub' | line='Cameroon' | size='460 — 4 × 60'
+56: brand='Don Pepin Garcia' | line='Serie JJ' | size='Selectos (Robusto) — 5 × 50'
+57: brand='Obsidian' | line='Original Black' | size='Toro — 6.2 × 54'
+58: brand='Ashton' | line='Aged Maduro' | size='User measured — 7.25 × 60; catalog vitola unconfirmed'
+59: brand='Oliva' | line='Serie V' | size='Lancero — 7 × 38'
+60: brand='Oliva' | line='Serie G' | size='Churchill — 7 × 50'
+61: brand='Rocky Patel' | line='Vintage 1990 Broadleaf' | size='Box-Pressed Churchill — 7 × 48'
+62: brand='Drew Estate' | line='Isla del Sol Sun-Blessed' | size='Churchill — 7 × 50'
+63: brand='La Aroma de Cuba' | line='Mi Amor' | size='Churchill — 7 × 50'
+64: brand='Asylum' | line='Insidious Connecticut' | size='64 × 7 Gordo — 7 × 64'
+65: brand='Ave Maria' | line='Immaculata' | size='Churchill — 7 × 48'
+66: brand='Perdomo' | line='Reserve 10th Anniversary Champagne' | size='Churchill — 7 × 54'
+67: brand='Kristoff / C.B. Jackson' | line='Original Criollo' | size='Vitola / size unconfirmed'
+68: brand='CAO' | line='Steel Horse' | size='Bullneck — 6.5 × 52'
+69: brand='CAO' | line='Steel Horse' | size='Handbrake — 4.5 × 50'
+70: brand='CAO' | line='Gold' | size='Corona — 5.5 × 42'
+71: brand='Oliva' | line='Serie V Melanio' | size='Double Toro — 6 × 60'
+72: brand='Rocky Patel' | line='White Label' | size='Sixty — 6 × 60'
+73: brand='Crux' | line='Epicure Maduro' | size='Robusto — 5 × 50'
+74: brand='AVO' | line='Syncro Caribe' | size='Robusto — 5 × 50'
+75: brand='Mark Twain' | line='Riverboat' | size='Robusto — 5 × 50'
+76: brand='Oliva' | line='Serie G' | size='Robusto — 4.5 × 50'
