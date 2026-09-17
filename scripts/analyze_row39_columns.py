@@ -14,11 +14,8 @@ def clean(x):
     x=re.sub(r'<[^>]+>',' ',x)
     return ' '.join(html.unescape(x).split())
 
-# Capture table headers for column mapping.
 thead=re.search(r'<thead\b[^>]*>(.*?)</thead>',tm.group(1),re.I|re.S)
-headers=[]
-if thead:
-    headers=[clean(x) for x in re.findall(r'<th\b[^>]*>(.*?)</th>',thead.group(1),re.I|re.S)]
+headers=[clean(x) for x in re.findall(r'<th\b[^>]*>(.*?)</th>',thead.group(1),re.I|re.S)] if thead else []
 
 lines=[f'Total rows: {len(rows)}', f'Headers: {headers}']
 for idx in [8,9,10,11,12,20,21,22,23,24]:
@@ -31,15 +28,25 @@ for idx in [8,9,10,11,12,20,21,22,23,24]:
         h=headers[ci-1] if ci-1 < len(headers) else f'col{ci}'
         lines.append(f'  {ci}. {h}: attrs={cattrs.strip()!r} text={clean(body)!r}')
 
-# Compare brand/line cells across all rows and flag likely merged brand+line patterns
-lines.append('\nALL ROWS BRAND / LINE SNAPSHOT')
+lines.append('\nTABLE-WIDE ALIGNMENT ANOMALIES')
 for idx,(attrs,row) in enumerate(rows,1):
     cells=re.findall(r'<td\b([^>]*)>(.*?)</td>',row,re.I|re.S)
-    if len(cells) < 5: continue
-    brand=clean(cells[2][1])
-    line=clean(cells[3][1])
-    size=clean(cells[4][1])
-    lines.append(f'{idx:02d}: brand={brand!r} | line={line!r} | size={size!r}')
+    if len(cells) != 9:
+        lines.append(f'{idx:02d}: cell-count={len(cells)}')
+        continue
+    vals=[clean(body) for _,body in cells]
+    brand,line,size,qty,strength=vals[2],vals[3],vals[4],vals[5],vals[6]
+    flags=[]
+    if ' — ' in brand:
+        flags.append('brand contains em-dash / likely combined brand+line')
+    if re.search(r'\b\d+(?:\.\d+|[¼½¾⅛⅜⅝⅞])?\s*[×x]\s*\d+\b', line, re.I):
+        flags.append('line contains dimensions / likely size shifted left')
+    if re.fullmatch(r'\d+', size):
+        flags.append('vitola/size is numeric-only / likely quantity shifted left')
+    if qty and not re.search(r'\d', qty):
+        flags.append('quantity has no number / likely strength shifted left')
+    if flags:
+        lines.append(f'{idx:02d}: brand={brand!r} | line={line!r} | size={size!r} | qty={qty!r} | strength={strength!r} | ' + '; '.join(flags))
 
 Path('row39_column_diagnostic.txt').write_text('\n'.join(lines),encoding='utf-8')
 print('wrote row39_column_diagnostic.txt')
