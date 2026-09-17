@@ -1,0 +1,12 @@
+cigar_inventory.html entry 5: cells=['05', '', 'CAO', 'Piazza — 6 × 60'] alt='CAO Italia Piazza'
+  src prefix='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAaQAAAK8CAIAAAAvQ1wJAAEAAElEQVR4nOz9WZM0S24lCB4AquYe8S13SzKTLBarakqkpX/KzM' length=317434
+  extracted=thumbnail_diagnostics/cigar_inventory_entry_5.png bytes=238057 mime=image/png
+cigar_inventory.html entry 22: cells=['22', '', 'Perdomo — Habano Bourbon Barrel-Aged Connecticut', 'Churchill — 7 × 54'] alt='Perdomo Habano Bourbon Barrel-Aged Connecticut Churchill band'
+  src prefix='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABgCAIAAAAip+O/AAAg90lEQVR4nE18y5JkR3Ld8UfEzawGGoPhDIekaaWNNpSZ/kBfJj' length=11350
+  extracted=thumbnail_diagnostics/cigar_inventory_entry_22.png bytes=8496 mime=image/png
+cigar_inventory_current_v7.html entry 5: cells=['05', '', 'CAO', 'Piazza — 6 × 60'] alt='CAO Italia Piazza'
+  src prefix='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAaQAAAK8CAIAAAAvQ1wJAAEAAElEQVR4nOz9WZM0S24lCB4AquYe8S13SzKTLBarakqkpX/KzM' length=317434
+  extracted=thumbnail_diagnostics/cigar_inventory_current_v7_entry_5.png bytes=238057 mime=image/png
+cigar_inventory_current_v7.html entry 22: cells=['22', '', 'Perdomo', 'Habano Bourbon Barrel-Aged Connecticut'] alt='Perdomo — Habano Bourbon Barrel-Aged Connecticut; cropped from your photo'
+  src prefix='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABgCAIAAAAip+O/AAApNElEQVR42pW82bJkV5Id5u57OHMMN+6YeXNOJIZCoaq7epLY3T' length=14162
+  extracted=thumbnail_diagnostics/cigar_inventory_current_v7_entry_22.png bytes=10605 mime=image/png
