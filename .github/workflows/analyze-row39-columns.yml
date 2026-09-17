@@ -24,4 +24,4 @@ jobs:
           git commit -m "Add row 39 column diagnostic report"
           git push
 
-# trigger full alignment check
+# trigger anomalies only
