@@ -1,0 +1,2 @@
+Entry 5 CAO Italia Piazza: original=(420, 700), crop_box=(46, 139, 373, 377), output=(327, 238)
+Entry 22 Perdomo Habano Bourbon Barrel-Aged Connecticut Churchill: restored v7 band thumbnail
