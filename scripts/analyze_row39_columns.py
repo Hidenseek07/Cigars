@@ -14,9 +14,6 @@ def clean(x):
     x=re.sub(r'<[^>]+>',' ',x)
     return ' '.join(html.unescape(x).split())
 
-def tags(x):
-    return re.findall(r'<([a-zA-Z0-9]+)\b([^>]*)>',x,re.S)
-
 lines=[]
 lines.append(f'Total rows: {len(rows)}')
 for idx in range(34,46):
@@ -26,29 +23,27 @@ for idx in range(34,46):
     lines.append(f'row attrs: {attrs.strip()}')
     lines.append(f'cell count: {len(cells)}')
     for ci,(cattrs,body) in enumerate(cells,1):
-        if ci in (4,5):
+        if ci in (4,7):
             lines.append(f'  col {ci} attrs: {cattrs.strip()}')
             lines.append(f'  col {ci} text: {clean(body)}')
             lines.append(f'  col {ci} html: {body[:1200]}')
 
-# Also summarize structural patterns for cols 4/5 before vs after 39
 for label,start,end in [('before39',1,38),('from39',39,len(rows))]:
-    patterns={4:{},5:{}}
+    patterns={4:{},7:{}}
     for idx in range(start,end+1):
         _,row=rows[idx-1]
         cells=re.findall(r'<td\b([^>]*)>(.*?)</td>',row,re.I|re.S)
-        if len(cells)<5: continue
-        for ci in (4,5):
+        if len(cells)<7: continue
+        for ci in (4,7):
             cattrs,body=cells[ci-1]
-            # normalize data values but preserve structure/classes
             structure=re.sub(r'>[^<]+<','><',body)
             structure=re.sub(r'\s+',' ',structure).strip()
             key=(cattrs.strip(), structure[:300])
             patterns[ci][key]=patterns[ci].get(key,0)+1
     lines.append(f'\nPATTERNS {label}')
-    for ci in (4,5):
+    for ci in (4,7):
         lines.append(f' column {ci}:')
-        for (a,st),count in sorted(patterns[ci].items(), key=lambda kv:-kv[1])[:12]:
+        for (a,st),count in sorted(patterns[ci].items(), key=lambda kv:-kv[1])[:20]:
             lines.append(f'   count={count} attrs={a!r} structure={st!r}')
 
 Path('row39_column_diagnostic.txt').write_text('\n'.join(lines),encoding='utf-8')
