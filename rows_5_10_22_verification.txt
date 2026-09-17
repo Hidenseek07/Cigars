@@ -1,0 +1,3 @@
+Entry 5: Brand='CAO'; Line='Italia'; Vitola='Piazza — 6 × 60'; Quantity='2'; Strength='Medium Balanced mid-range strength and body.'; VERIFIED=True
+Entry 10: Brand='Alec Bradley'; Line='Black Market Filthy Hooligan'; Vitola='Toro — 6 × 50'; Quantity='2'; Strength='Medium Balanced mid-range strength and body.'; VERIFIED=True
+Entry 22: Brand='Perdomo'; Line='Habano Bourbon Barrel-Aged Connecticut'; Vitola='Churchill — 7 × 54'; Quantity='2'; Strength='Mild–Medium Approachable strength with more body and intensity than a mild cigar.'; VERIFIED=True
