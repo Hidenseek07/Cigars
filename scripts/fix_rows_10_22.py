@@ -1,8 +1,9 @@
 from pathlib import Path
-import re
+import re, html as htmlmod
 
 p = Path('cigar_inventory.html')
 html = p.read_text(encoding='utf-8')
+
 
 def set_row(entry_id, values, data_quantity):
     global html
@@ -16,19 +17,18 @@ def set_row(entry_id, values, data_quantity):
     if len(cells) != 9:
         raise SystemExit(f'row {entry_id} has {len(cells)} cells, expected 9')
 
-    # Update row data-quantity to match the repaired visible Quantity cell.
     if re.search(r'\bdata-quantity=["\'][^"\']*["\']', open_tag, re.I):
         open_tag = re.sub(r'\bdata-quantity=["\'][^"\']*["\']', f'data-quantity="{data_quantity}"', open_tag, count=1, flags=re.I)
     else:
         open_tag = open_tag[:-1] + f' data-quantity="{data_quantity}">'
 
-    replacements = {}
-    # 0-based cell positions: Brand=2, Line=3, Vitola=4, Quantity=5, Strength=6, Flavor=7
-    replacements[2] = values['brand']
-    replacements[3] = values['line']
-    replacements[4] = values['vitola']
-    replacements[5] = values['quantity']
-    replacements[6] = values['strength']
+    replacements = {
+        2: values['brand'],
+        3: values['line'],
+        4: values['vitola'],
+        5: values['quantity'],
+        6: values['strength'],
+    }
     if 'flavor' in values:
         replacements[7] = values['flavor']
 
@@ -55,6 +55,17 @@ def set_row(entry_id, values, data_quantity):
     new_row = open_tag + new_body + close_tag
     html = html[:m.start()] + new_row + html[m.end():]
 
+
+# #5 CAO Italia Piazza: Italia is the line, Piazza is the 6 x 60 vitola.
+set_row(5, {
+    'brand': 'CAO',
+    'line': 'Italia',
+    'vitola': 'Piazza — 6 × 60',
+    'quantity': '2',
+    'strength': '<span class="strength-name">Medium</span><span class="source-caution">Balanced mid-range strength and body.</span>',
+}, 2)
+
+# #10 Alec Bradley Black Market Filthy Hooligan.
 set_row(10, {
     'brand': 'Alec Bradley',
     'line': 'Black Market Filthy Hooligan',
@@ -63,6 +74,7 @@ set_row(10, {
     'strength': '<span class="strength-name">Medium</span><span class="source-caution">Balanced mid-range strength and body.</span>',
 }, 2)
 
+# #22 Perdomo Habano Bourbon Barrel-Aged Connecticut.
 set_row(22, {
     'brand': 'Perdomo',
     'line': 'Habano Bourbon Barrel-Aged Connecticut',
@@ -73,4 +85,34 @@ set_row(22, {
 }, 2)
 
 p.write_text(html, encoding='utf-8')
-print('Repaired inventory rows 10 and 22')
+
+
+def clean(x):
+    x = re.sub(r'<[^>]+>', ' ', x)
+    return ' '.join(htmlmod.unescape(x).split())
+
+expected = {
+    5: ('CAO', 'Italia', 'Piazza — 6 × 60', '2', 'Medium'),
+    10: ('Alec Bradley', 'Black Market Filthy Hooligan', 'Toro — 6 × 50', '2', 'Medium'),
+    22: ('Perdomo', 'Habano Bourbon Barrel-Aged Connecticut', 'Churchill — 7 × 54', '2', 'Mild–Medium'),
+}
+
+final = p.read_text(encoding='utf-8')
+report = []
+for entry_id, exp in expected.items():
+    m = re.search(rf'<tr\b[^>]*\bid=["\']cigar-{entry_id:02d}["\'][^>]*>(.*?)</tr>', final, re.I | re.S)
+    if not m:
+        raise SystemExit(f'verification row {entry_id} missing')
+    cells = re.findall(r'<td\b[^>]*>(.*?)</td>', m.group(1), re.I | re.S)
+    if len(cells) != 9:
+        raise SystemExit(f'verification row {entry_id} has {len(cells)} cells')
+    got = tuple(clean(cells[i]) for i in (2,3,4,5,6))
+    # Strength contains the subnote after the primary label, so compare its first token/range.
+    strength_primary = exp[4]
+    ok = got[0] == exp[0] and got[1] == exp[1] and got[2] == exp[2] and got[3] == exp[3] and got[4].startswith(strength_primary)
+    report.append(f'Entry {entry_id}: Brand={got[0]!r}; Line={got[1]!r}; Vitola={got[2]!r}; Quantity={got[3]!r}; Strength={got[4]!r}; VERIFIED={ok}')
+    if not ok:
+        raise SystemExit(f'verification failed for row {entry_id}: {got}')
+
+Path('rows_5_10_22_verification.txt').write_text('\n'.join(report) + '\n', encoding='utf-8')
+print('Repaired and verified inventory rows 5, 10 and 22')
