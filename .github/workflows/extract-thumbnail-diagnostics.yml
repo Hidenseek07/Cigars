@@ -1,0 +1,76 @@
+name: Extract thumbnail diagnostics
+
+on:
+  push:
+    paths:
+      - '.github/workflows/extract-thumbnail-diagnostics.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Extract entry thumbnails
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re, base64, mimetypes
+
+          out = Path('thumbnail_diagnostics')
+          out.mkdir(exist_ok=True)
+          report=[]
+
+          def extract(path):
+              text=Path(path).read_text(encoding='utf-8')
+              m=re.search(r'<table\b[^>]*\bid=["\']inventory-table["\'][^>]*>(.*?)</table>', text, re.I|re.S)
+              if not m: raise SystemExit(f'inventory-table not found in {path}')
+              b=re.search(r'<tbody\b[^>]*>(.*?)</tbody>', m.group(1), re.I|re.S)
+              if not b: raise SystemExit(f'tbody not found in {path}')
+              rows=re.findall(r'<tr\b[^>]*>(.*?)</tr>', b.group(1), re.I|re.S)
+              for idx in (5,22):
+                  row=rows[idx-1]
+                  cells=re.findall(r'<td\b[^>]*>(.*?)</td>', row, re.I|re.S)
+                  plain=[re.sub(r'<[^>]+>',' ',c) for c in cells]
+                  plain=[' '.join(x.split()) for x in plain]
+                  img=re.search(r'<img\b[^>]*\bsrc=["\']([^"\']+)["\'][^>]*>', row, re.I|re.S)
+                  alt=''
+                  if img:
+                      tag=img.group(0)
+                      am=re.search(r'\balt=["\']([^"\']*)["\']', tag, re.I|re.S)
+                      alt=am.group(1) if am else ''
+                  report.append(f'{path} entry {idx}: cells={plain[:4]} alt={alt!r}')
+                  if not img:
+                      report.append('  no image found')
+                      continue
+                  src=img.group(1)
+                  report.append(f'  src prefix={src[:120]!r} length={len(src)}')
+                  if src.startswith('data:'):
+                      head,data=src.split(',',1)
+                      mime=head[5:].split(';',1)[0] or 'application/octet-stream'
+                      ext=mimetypes.guess_extension(mime) or '.bin'
+                      if ';base64' in head:
+                          raw=base64.b64decode(data)
+                      else:
+                          from urllib.parse import unquote_to_bytes
+                          raw=unquote_to_bytes(data)
+                      target=out/f'{Path(path).stem}_entry_{idx}{ext}'
+                      target.write_bytes(raw)
+                      report.append(f'  extracted={target} bytes={len(raw)} mime={mime}')
+                  else:
+                      report.append(f'  external src={src}')
+
+          for f in ('cigar_inventory.html','cigar_inventory_current_v7.html'):
+              extract(f)
+          (out/'report.txt').write_text('\n'.join(report),encoding='utf-8')
+          PY
+      - name: Commit diagnostics
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add thumbnail_diagnostics
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Extract thumbnail diagnostics"
+          git push
