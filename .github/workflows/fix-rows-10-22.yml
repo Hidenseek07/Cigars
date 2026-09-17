@@ -1,0 +1,25 @@
+name: Fix inventory rows 10 and 22
+
+on:
+  push:
+    paths:
+      - '.github/workflows/fix-rows-10-22.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Repair rows 10 and 22
+        run: python3 scripts/fix_rows_10_22.py
+      - name: Commit repaired inventory
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add cigar_inventory.html
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Fix inventory rows 10 and 22"
+          git push
