@@ -1,0 +1,30 @@
+ENTRY 10
+col1: 10
+col2: 
+col3: Alec Bradley — Black Market Filthy Hooligan
+col4: Toro — 6 × 50
+col5: 2
+col6: 1
+col7: Medium Balanced mid-range strength and body.
+col8: Coffee and spice with a crisp, lingering pepper finish.
+col9: C Predicted Coffee appeals, but a lingering pepper finish is a meaningful mismatch risk. The barber-pole appearance is not evidence that it tastes or develops like your favorite Riverboat. Evidence & sources Basis: Line-level. Personal ranking is my prediction of your enjoyment; it is not a published quality score. Uses the two-wrapper Barber Pole profile, not Shamrock. Release year is unconfirmed, so this is a line-level prediction. Alec Bradley — Filthy Hooligan Barber Pole Research checked September 12, 2026. Published tasting notes are descriptive, not guaranteed flavors.
+
+ENTRY 22
+col1: 22
+col2: 
+col3: Perdomo — Habano Bourbon Barrel-Aged Connecticut
+col4: Churchill — 7 × 54
+col5: 2
+col6: Mild–Medium
+col7: Mild–Medium Approachable strength with more body and intensity than a mild cigar.
+col8: A — Predicted | Excellent fit for your preferences: mild-to-medium strength, rich creaminess, caramel, cedar, almond and a buttery finish. This profile is much closer to your confirmed favorites than to your stronger, pepper-heavy dislikes. Evidence & sources Perdomo: Habano Bourbon Barrel-Aged Connecticut is Mild to Medium with a rich, creamy smoke and hints of caramel and cedar; Churchill is 7 × 54. Cigars.com: Churchill 7 × 54 with sweet cedar, caramel, almonds and leather; Mellow–Medium.
+col9: A Predicted Cream, caramel, cedar and a buttery finish suggest compatible layers without a high published strength. A is a predicted combination of flavor and balance, not an automatic reward for mildness. Evidence & sources Basis: User-confirmed release; manufacturer line-level profile. Personal ranking is my prediction of your enjoyment, not a published quality score or a guarantee. You corrected the earlier non–Bourbon Barrel-Aged identification and confirmed this is Habano Bourbon Barrel-Aged Connecticut. Perdomo describes this version as mild to medium-bodied, with creaminess, light caramel and cedar notes, and a buttery finish. The profile is for the Connecticut release, not Sun Grown or Maduro. Exact vitola remains unconfirmed; no size has been inferred from the photo. Barrel aging alone is not taken as evidence of a dominant bourbon flavor. Perdomo — Habano Bourbon Barrel-Aged, Connecticut strength and flavor profile Research checked September 12, 2026. Published tasting notes are descriptive, not guaranteed flavors.
+
+REFERENCE 9: brand='Ramon Bueso'; line='Genesis The Project'; size='Robusto — 4.8 × 52'; qty='5'; strength='Medium–Full Stronger profile with fuller body and greater nicotine potential.'
+REFERENCE 11: brand='Macanudo'; line='M by Macanudo Bourbon'; size='Unconfirmed'; qty='1'; strength='Mild–Medium Flavor fit uncertain'
+REFERENCE 21: brand='CAO'; line='Vision'; size='Churchill — 7 × 50'; qty='2'; strength='Medium Source conflict'
+REFERENCE 23: brand='Foundation'; line='The Wise Man Corojo'; size='Toro — dimensions unconfirmed'; qty='1'; strength='Medium Balanced mid-range strength and body.'
+
+ROWS WITH LIKELY BRAND/LINE SHIFT
+10: brand='Alec Bradley — Black Market Filthy Hooligan'; line='Toro — 6 × 50'; size='2'; qty='1'
+22: brand='Perdomo — Habano Bourbon Barrel-Aged Connecticut'; line='Churchill — 7 × 54'; size='2'; qty='Mild–Medium'
