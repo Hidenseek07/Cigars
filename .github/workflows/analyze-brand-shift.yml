@@ -1,0 +1,25 @@
+name: Analyze brand shift rows 10 and 22
+
+on:
+  push:
+    paths:
+      - '.github/workflows/analyze-brand-shift.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Analyze brand shift
+        run: python3 scripts/analyze_brand_shift_10_22.py
+      - name: Commit report
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add brand_shift_10_22_report.txt
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Add focused brand-shift diagnostic"
+          git push
