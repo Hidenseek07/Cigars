@@ -1,4 +1,4 @@
-name: Fix inventory rows 10 and 22
+name: Fix inventory rows 5 10 and 22
 
 on:
   push:
@@ -13,15 +13,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Repair rows 10 and 22
+      - name: Repair and verify rows 5 10 and 22
         run: python3 scripts/fix_rows_10_22.py
-      - name: Commit repaired inventory
+      - name: Commit repaired inventory and verification
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add cigar_inventory.html
+          git add cigar_inventory.html rows_5_10_22_verification.txt
           if git diff --cached --quiet; then exit 0; fi
-          git commit -m "Fix inventory rows 10 and 22"
+          git commit -m "Fix and verify inventory rows 5 10 and 22"
           git push
 
-# trigger
+# final verified repair trigger
