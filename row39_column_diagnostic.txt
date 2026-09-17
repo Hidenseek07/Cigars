@@ -1,0 +1,177 @@
+Total rows: 76
+
+ENTRY 34
+row attrs: data-entry-id="34" data-grade="B" data-identification-status="identified" data-quantity="8" data-size-status="user-vitola-catalog-dimensions" data-source-photo="image-1789265855928.jpg" data-strength="Mild–Medium" id="cigar-34" title="CAO Gold: band and user identification agree. Robusto and quantity 8 supplied by the user; CAO lists the Robusto at 5 × 50. Not Gold Maduro. No personal smoking or pre-light reaction has yet been reported for this entry."
+cell count: 9
+  col 4 attrs: class="name"
+  col 4 text: Gold
+  col 4 html: Gold
+  col 5 attrs: data-size-source="manufacturer-catalog-user-vitola" data-source-url="https://www.caocigars.com/cigars/gold/" title="Robusto specified by the user; 5 × 50 is the manufacturer’s catalog specification, not a measurement from the photo."
+  col 5 text: Robusto — 5 × 50
+  col 5 html: Robusto — 5 × 50
+
+ENTRY 35
+row attrs: data-entry-id="35" data-grade="B" data-identification-status="identified" data-quantity="3" data-size-status="user-vitola-catalog-dimensions" data-source-photo="image-1789266268524.jpg" data-strength="Medium" id="cigar-35" title="CAO FASA Sombra: band and user identification agree. Toro and quantity 3 supplied by the user; CAO lists Toro at 6 × 50. Recorded separately from FASA Sol and Noche. No personal smoking or pre-light reaction has been reported for this entry."
+cell count: 9
+  col 4 attrs: class="name"
+  col 4 text: FASA Sombra
+  col 4 html: FASA Sombra
+  col 5 attrs: data-size-source="manufacturer-catalog-user-vitola" data-source-url="https://www.caocigars.com/cigars/fasa-sombra/" title="Toro specified by the user; 6 × 50 is CAO’s catalog specification, not a measurement from the photo."
+  col 5 text: Toro — 6 × 50
+  col 5 html: Toro — 6 × 50
+
+ENTRY 36
+row attrs: data-entry-id="36" data-grade="C" data-identification-status="identified" data-photo-scope="shared-line-reference-size-not-established-by-photo" data-quantity="1" data-size-status="user-dimensions-catalog-vitola" data-source-photo="image-1789266688345.jpg" data-strength="Medium" id="cigar-36" title="CAO FASA Sol: identity supported by the user's description and visible bands. User supplied one 6 × 60 and one 6 × 50; each is recorded separately. The single supplied photo is used as a shared line reference, not evidence that both sizes were separately photographed."
+cell count: 9
+  col 4 attrs: class="name"
+  col 4 text: FASA Sol
+  col 4 html: FASA Sol
+  col 5 attrs: data-size-source="user-dimensions-manufacturer-vitola" data-source-url="https://www.caocigars.com/cigars/fasa-sol/" title="Dimensions and quantity supplied by the user; vitola name confirmed against CAO. Not measured from the photo."
+  col 5 text: Gigante — 6 × 60
+  col 5 html: Gigante — 6 × 60
+
+ENTRY 37
+row attrs: data-entry-id="37" data-grade="C" data-identification-status="identified" data-photo-scope="shared-line-reference-size-not-established-by-photo" data-quantity="1" data-size-status="user-dimensions-catalog-vitola" data-source-photo="image-1789266688345.jpg" data-strength="Medium" id="cigar-37" title="CAO FASA Sol: identity supported by the user's description and visible bands. User supplied one 6 × 60 and one 6 × 50; each is recorded separately. The single supplied photo is used as a shared line reference, not evidence that both sizes were separately photographed."
+cell count: 9
+  col 4 attrs: class="name"
+  col 4 text: FASA Sol
+  col 4 html: FASA Sol
+  col 5 attrs: data-size-source="user-dimensions-manufacturer-vitola" data-source-url="https://www.caocigars.com/cigars/fasa-sol/" title="Dimensions and quantity supplied by the user; vitola name confirmed against CAO. Not measured from the photo."
+  col 5 text: Toro — 6 × 50
+  col 5 html: Toro — 6 × 50
+
+ENTRY 38
+row attrs: data-entry-id="38" data-grade="A" data-identification-status="identified" data-quantity="8" data-size-status="user-vitola-researched-dimensions" data-source-photo="image-1789267239806.jpg" data-strength="Mild" id="cigar-38" title="Tabak Especial Dulce Lonsdale: user identified the cigar and quantity 8. Historical Lonsdale size is 6¾ × 44. Drew Estate currently describes Dulce as mellow, creamy and sweet with coffee, cream and milk chocolate. The user has explicitly identified Tabak Especial as a favorite, so this receives an A confirmed-favorite grade."
+cell count: 9
+  col 4 attrs: class="name"
+  col 4 text: Tabak Especial Dulce
+  col 4 html: Tabak Especial Dulce
+  col 5 attrs: 
+  col 5 text: Lonsdale — 6¾ × 44
+  col 5 html: Lonsdale — 6¾ × 44
+
+ENTRY 39
+row attrs: data-grade="B" data-search="oscar valladares wild hunter oscuro toro 6 x 52 medium full chocolate espresso earth sweetness spice" data-strength="Medium–Full" id="cigar-39"
+cell count: 9
+  col 4 attrs: 
+  col 4 text: Wild Hunter Oscuro
+  col 4 html: Wild Hunter Oscuro
+  col 5 attrs: 
+  col 5 text: Toro — 6 × 52
+  col 5 html: Toro — 6 × 52
+
+ENTRY 40
+row attrs: data-grade="B" data-search="rocky patel catch twenty-two catch 22 toro 6 x 52 medium cocoa earth spice sweetness corojo" data-strength="Medium" id="cigar-40"
+cell count: 9
+  col 4 attrs: 
+  col 4 text: Catch Twenty-Two
+  col 4 html: Catch Twenty-Two
+  col 5 attrs: 
+  col 5 text: Toro — 6 × 52
+  col 5 html: Toro — 6 × 52
+
+ENTRY 41
+row attrs: data-grade="B" data-search="cao nicaragua granada 6 x 50 medium full espresso cocoa earth cedar spice" data-strength="Medium–Full" id="cigar-41"
+cell count: 9
+  col 4 attrs: 
+  col 4 text: Nicaragua
+  col 4 html: Nicaragua
+  col 5 attrs: 
+  col 5 text: Granada — 6 × 50
+  col 5 html: Granada — 6 × 50
+
+ENTRY 42
+row attrs: data-grade="A" data-search="cao gold maduro robusto 5 x 50 mild medium coffee cream butter cocoa earth sweetness" data-strength="Mild–Medium" id="cigar-42"
+cell count: 9
+  col 4 attrs: 
+  col 4 text: Gold Maduro
+  col 4 html: Gold Maduro
+  col 5 attrs: 
+  col 5 text: Robusto — 5 × 50
+  col 5 html: Robusto — 5 × 50
+
+ENTRY 43
+row attrs: data-grade="A" data-search="ave maria immaculata belicoso torpedo 6 x 54 mild medium cream cedar white pepper caramel toast bread" data-strength="Mild–Medium" id="cigar-43"
+cell count: 9
+  col 4 attrs: 
+  col 4 text: Immaculata
+  col 4 html: Immaculata
+  col 5 attrs: 
+  col 5 text: Belicoso (torpedo-style) — 6 × 54
+  col 5 html: Belicoso (torpedo-style) — 6 × 54
+
+ENTRY 44
+row attrs: data-grade="C" data-search="macanudo inspirado green toro 6 x 50 medium earth nuts sweet black pepper coffee maple molasses cedar" data-strength="Medium" id="cigar-44"
+cell count: 9
+  col 4 attrs: 
+  col 4 text: Inspirado Green
+  col 4 html: Inspirado Green
+  col 5 attrs: 
+  col 5 text: Toro — 6 × 50
+  col 5 html: Toro — 6 × 50
+
+ENTRY 45
+row attrs: data-grade="A" data-search="aging room quattro connecticut vibrato toro box pressed 6 x 54 mild medium cream roasted nuts caramel cedar cocoa sweetness coffee leather spice" data-strength="Mild–Medium" id="cigar-45"
+cell count: 9
+  col 4 attrs: 
+  col 4 text: Quattro Connecticut
+  col 4 html: Quattro Connecticut
+  col 5 attrs: 
+  col 5 text: Vibrato (box-pressed Toro) — 6 × 54
+  col 5 html: Vibrato (box-pressed Toro) — 6 × 54
+
+PATTERNS before39
+ column 4:
+   count=2 attrs='class="name"' structure='FASA Sol'
+   count=1 attrs='class="name"' structure='Flathead V660 Carb'
+   count=1 attrs='class="name"' structure='Symphony'
+   count=1 attrs='class="name"' structure='Alma del Campo'
+   count=1 attrs='class="name"' structure='Prensado'
+   count=1 attrs='class="name"' structure='Piazza — 6 × 60'
+   count=1 attrs='class="name"' structure='Cameroon L’Anniversaire'
+   count=1 attrs='class="name"' structure='Colombia'
+   count=1 attrs='class="name"' structure='Consigliere'
+   count=1 attrs='class="name"' structure='Genesis The Project'
+   count=1 attrs='class="name"' structure='Toro — 6 × 50'
+   count=1 attrs='class="name"' structure='M by Macanudo Bourbon'
+ column 5:
+   count=9 attrs='' structure='Unconfirmed'
+   count=3 attrs='' structure='2'
+   count=2 attrs='' structure='Torpedo-style; dimensions unconfirmed'
+   count=2 attrs='title="Vitola and exact dimensions were not supplied and are not inferred from the photo."' structure='Unconfirmed'
+   count=1 attrs='' structure='6 × 60'
+   count=1 attrs='title="Dimensions confirmed by the user."' structure='5 × 52'
+   count=1 attrs='' structure='Robusto — 4.8 × 52'
+   count=1 attrs='' structure='Santiago (Robusto) — 5 × 50'
+   count=1 attrs='title="Dimensions confirmed by the user; Frontier (Churchill) is the matching catalog vitola."' structure='Churchill — 7 × 50'
+   count=1 attrs='' structure='Torpedo — 6 × 52 (catalog size; not measured)'
+   count=1 attrs='title="Corona is printed on the cellophane label supplied by the user. Exact dimensions have not been confirmed."' structure='Corona — dimensions unconfirmed'
+   count=1 attrs='data-size-source="manufacturer-catalog-user-approved" data-source-url="https://www.caocigars.com/cigars/vision/" title="CAO Vision Churchill 7 × 50: manufacturer catalog size accepted by the user; previous ring-gauge discrepancy resolved."' structure='Churchill — 7 × 50'
+
+PATTERNS from39
+ column 4:
+   count=2 attrs='' structure='Immaculata'
+   count=2 attrs='' structure='Serie G'
+   count=2 attrs='' structure='Steel Horse'
+   count=1 attrs='' structure='Wild Hunter Oscuro'
+   count=1 attrs='' structure='Catch Twenty-Two'
+   count=1 attrs='' structure='Nicaragua'
+   count=1 attrs='' structure='Gold Maduro'
+   count=1 attrs='' structure='Inspirado Green'
+   count=1 attrs='' structure='Quattro Connecticut'
+   count=1 attrs='' structure='Tiempo 2:11'
+   count=1 attrs='' structure='New Wave Reserva'
+   count=1 attrs='' structure='Session'
+ column 5:
+   count=6 attrs='' structure='Robusto — 5 × 50'
+   count=3 attrs='' structure='Churchill — 7 × 50'
+   count=2 attrs='' structure='Toro — 6 × 52'
+   count=2 attrs='' structure='Vitola / size unconfirmed'
+   count=1 attrs='' structure='Granada — 6 × 50'
+   count=1 attrs='' structure='Belicoso (torpedo-style) — 6 × 54'
+   count=1 attrs='' structure='Toro — 6 × 50'
+   count=1 attrs='' structure='Vibrato (box-pressed Toro) — 6 × 54'
+   count=1 attrs='' structure='Long Robusto — 6 × 52'
+   count=1 attrs='' structure='Garage (Robusto) — 5.25 × 54'
+   count=1 attrs='' structure='Gordo / Hueso — 6 × 60'
+   count=1 attrs='' structure='Rothchilde — 5 × 52'
