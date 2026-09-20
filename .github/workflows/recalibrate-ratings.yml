@@ -1,0 +1,27 @@
+name: Apply cigar rating recalibration
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/recalibrate_ratings_2026_09_20.py'
+      - '.github/workflows/recalibrate-ratings.yml'
+permissions:
+  contents: write
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Apply recalibration
+        run: python scripts/recalibrate_ratings_2026_09_20.py
+      - name: Commit updated inventory
+        run: |
+          if git diff --quiet -- cigar_inventory.html; then
+            echo "No inventory changes"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add cigar_inventory.html
+          git commit -m "Recalibrate cigar ratings from latest feedback"
+          git push
